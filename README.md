@@ -53,3 +53,48 @@ Run server
 python manage.py runserver
 ```
 
+startApp (기능 분리)
+```shell
+python manage.py startapp blog
+tree #to see the structure
+```
+
+After you start the blog app
+
+blog.view.py (This format)
+```shell
+from django.shortcuts import render
+from django.http import HttpResponse
+def home(request):
+    return HttpResponse('<h1>Blog Home</h1>')
+
+
+def about(request):
+    return HttpResponse('<h1>Blog About</h1>')
+```
+
+blog.urls.py (This format, you need to create by yourself)
+```shell
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='blog-home'),
+    path('about/', views.about, name='blog-about'),
+]
+```
+
+django_project.urls.py 
+```shell
+from django.contrib import admin
+from django.urls import path, include #need to include blog
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')), #blog urls add
+]
+```
+
+
+
+
