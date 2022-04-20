@@ -94,7 +94,22 @@ urlpatterns = [
     path('blog/', include('blog.urls')), #blog urls add
 ]
 ```
+## PostgreSQL 연결 (미리 postgresql에 데이터 베이스를 만들어 놓는다.)
 
+django_project.urls.py 
 
+```shell
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',  #PostgreSQL
+        'NAME': 'Blog',  #資料庫名稱
+        'USER': 'postgres',  #資料庫帳號
+        'PASSWORD': '9999',  #資料庫密碼
+        'HOST': 'localhost',  #Server(伺服器)位址
+        'PORT': '5432'  #PostgreSQL Port號
+    }
+}
+```
+#blog.models.py에 모델을 만들고, admin page에 생기게 하고 싶으면 blog.admin.py 에 admin.site.register(modelname) 을 등록해야 한다.
 
 
