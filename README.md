@@ -95,6 +95,12 @@ urlpatterns = [
 ]
 ```
 ## PostgreSQL 연결 (미리 postgresql에 데이터 베이스를 만들어 놓는다.)
+terminal command
+```shell
+pip install psycopg2
+pip install psycopg2-binary #probably this is for macbook m1 이거때매 계속 에러 생겼었음.
+```
+
 
 django_project.urls.py 
 
