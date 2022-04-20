@@ -110,6 +110,6 @@ DATABASES = {
     }
 }
 ```
-# blog.models.py에 모델을 만들고, admin page에 생기게 하고 싶으면 blog.admin.py 에 admin.site.register(modelname) 을 등록해야 한다.
+### blog.models.py에 모델을 만들고, admin page에 생기게 하고 싶으면 blog.admin.py 에 admin.site.register(modelname) 을 등록해야 한다.
 
 
